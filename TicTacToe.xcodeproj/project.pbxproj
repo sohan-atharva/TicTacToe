@@ -11,6 +11,8 @@
 		959A61F029E7D5E7004D2A8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959A61EF29E7D5E7004D2A8E /* ContentView.swift */; };
 		959A61F229E7D5E8004D2A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959A61F129E7D5E8004D2A8E /* Assets.xcassets */; };
 		959A61F529E7D5E9004D2A8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959A61F429E7D5E9004D2A8E /* Preview Assets.xcassets */; };
+		959A61FC29E80A29004D2A8E /* WinnigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959A61FB29E80A29004D2A8E /* WinnigView.swift */; };
+		959A620129E80A88004D2A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959A620029E80A88004D2A8E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		959A61EF29E7D5E7004D2A8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		959A61F129E7D5E8004D2A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		959A61F429E7D5E9004D2A8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		959A61FB29E80A29004D2A8E /* WinnigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnigView.swift; sourceTree = "<group>"; };
+		959A620029E80A88004D2A8E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,9 @@
 		959A61EC29E7D5E7004D2A8E /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				959A61ED29E7D5E7004D2A8E /* TicTacToeApp.swift */,
-				959A61EF29E7D5E7004D2A8E /* ContentView.swift */,
+				959A61FE29E80A65004D2A8E /* App */,
+				959A61FD29E80A5B004D2A8E /* Views */,
+				959A61FF29E80A75004D2A8E /* Helpers */,
 				959A61F129E7D5E8004D2A8E /* Assets.xcassets */,
 				959A61F329E7D5E9004D2A8E /* Preview Content */,
 			);
@@ -65,6 +70,31 @@
 				959A61F429E7D5E9004D2A8E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		959A61FD29E80A5B004D2A8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				959A61EF29E7D5E7004D2A8E /* ContentView.swift */,
+				959A61FB29E80A29004D2A8E /* WinnigView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		959A61FE29E80A65004D2A8E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				959A61ED29E7D5E7004D2A8E /* TicTacToeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		959A61FF29E80A75004D2A8E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				959A620029E80A88004D2A8E /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +169,8 @@
 			files = (
 				959A61F029E7D5E7004D2A8E /* ContentView.swift in Sources */,
 				959A61EE29E7D5E7004D2A8E /* TicTacToeApp.swift in Sources */,
+				959A61FC29E80A29004D2A8E /* WinnigView.swift in Sources */,
+				959A620129E80A88004D2A8E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
