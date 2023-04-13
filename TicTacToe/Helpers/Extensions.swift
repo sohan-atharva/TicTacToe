@@ -9,10 +9,10 @@ import SwiftUI
 
 extension View{
     
-    func applyGradient(color: Color) -> some View{
+    func applyGradient(colors: [Color]) -> some View{
         self.overlay {
             Rectangle()
-                .fill(LinearGradient(colors: [color,Color.red], startPoint: .leading, endPoint: .trailing))
+                .fill(LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing))
                 .mask {
                     self
                 }

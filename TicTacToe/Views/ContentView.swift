@@ -19,6 +19,8 @@ enum Players{
 
 struct ContentView: View {
     
+    @Binding var  presented: Bool
+    
     @State var blocksArray: [[BlockValue]] = [
         [BlockValue.empty,BlockValue.empty,BlockValue.empty],
         [BlockValue.empty,BlockValue.empty,BlockValue.empty],
@@ -41,6 +43,21 @@ struct ContentView: View {
             VStack{
                 
                 HStack{
+                    
+                    Button {
+                        withAnimation {
+                            presented = false
+                        }
+                        
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.black)
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .opacity(0.4)
+                    }
+
                     
                     Spacer()
                     
@@ -279,6 +296,6 @@ extension ContentView{
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(presented: Binding.constant(true))
     }
 }
