@@ -8,8 +8,8 @@
 import SwiftUI
 
 enum BlockValue: String{
-    case cross = "❌"
-    case zero = "⚫️"
+    case cross = "xmark"
+    case zero = "circle"
     case empty = ""
 }
 
@@ -37,7 +37,7 @@ struct ContentView: View {
         ZStack{
             
             Rectangle()
-                .fill(activePlayer == .one ? .purple.opacity(0.05) : .blue.opacity(0.05) )
+                .fill(.gray.opacity(0.05))
                 .ignoresSafeArea()
             
             VStack{
@@ -94,18 +94,26 @@ struct ContentView: View {
                                 
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color.gray.opacity(0.2))
+                                        .fill( value == .cross ? .blue.opacity(0.2) : value == .zero ? .purple.opacity(0.2) : Color.gray.opacity(0.2))
                                     
                                         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 0)
-                                    Text("\(value.rawValue)")
-                                        .font(.system(size: 50))
+                                    if value != .empty{
+                                        Image(systemName: "\(value.rawValue)")
+                                            .font(.system(size: 50))
+                                            .fontWeight(.bold)
+                                            .foregroundColor( value == .cross ? .blue : .purple)
+                                            .transition(.opacity.combined(with: .scale))
+                                    }
                                 }
                                 .frame(width: 100, height: 100, alignment: .center)
                                 .onTapGesture {
                                     
                                     if blocksArray[i][j] == .empty{
-                                        blocksArray[i][j] = activePlayer == .one ? .zero : .cross
+                                        withAnimation(.easeInOut(duration: 1)) {
+                                            blocksArray[i][j] = activePlayer == .one ? .zero : .cross
+                                        }
                                         didPlayerClick()
+                                        
                                     }else{
                                         //TODO: Show choose another one
                                         showMessage(message: "Please choose another one")
